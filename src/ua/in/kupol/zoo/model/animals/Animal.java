@@ -19,7 +19,7 @@ abstract public class Animal {
     private Boolean isHungry;
 
     abstract void myFeature();
-    public void aboutMe(){
+    public void aboutAnimal(){
         System.out.printf("\n\nЯ " + getClass().getSimpleName() + " Меня зовут: " + getNickName());
         eat();
         bag();

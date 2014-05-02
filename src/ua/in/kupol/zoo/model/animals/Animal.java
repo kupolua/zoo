@@ -6,8 +6,10 @@ package ua.in.kupol.zoo.model.animals;
 abstract public class Animal {
 
 
-    private int requiredAmountFood;
-    private int animalWeight; //todo подключить генератор случайных чисел
+    private double requiredAmountFood;
+    private double animalWeight; //todo подключить генератор случайных чисел
+    private int workerID;
+    private int doctorID;
 
     private String nickName;
     private String state;
@@ -19,8 +21,25 @@ abstract public class Animal {
     private Boolean isHungry;
 
     abstract void myFeature();
+
+    public void createAnimal(String[] fieldsList) {
+        requiredAmountFood = Double.parseDouble(fieldsList[0]);
+        animalWeight = Double.parseDouble(fieldsList[1]);
+        nickName = fieldsList[2];
+        state = fieldsList[3];
+        voice = fieldsList[4];
+        foodType = fieldsList[5];
+        integument = fieldsList[6];
+        isHealth = Boolean.valueOf(fieldsList[7]);
+        isHungry = Boolean.valueOf(fieldsList[8]);
+        workerID = Integer.parseInt(fieldsList[9]);
+        doctorID = Integer.parseInt(fieldsList[10]);
+    }
     public void aboutAnimal(){
         System.out.printf("\n\nЯ " + getClass().getSimpleName() + " Меня зовут: " + getNickName());
+        System.out.printf("\nМой вес: " + getAnimalWeight());
+        System.out.printf("\nВес моего корма: " + getRequiredAmountFood());
+
         eat();
         bag();
         beIll();
@@ -28,20 +47,20 @@ abstract public class Animal {
     }
 
     public void eat() {
-        System.out.printf("%s%s", "\n   Я сейчас: ", (getIsHungry()  ? "не хочу есть" : "голодный(ая)"));
+        System.out.printf("%s%s", "\n   Я сейчас: ", (isHungry()  ? "не хочу есть" : "голодный(ая)"));
     }
 
     public void bag() {
-        System.out.printf("%s", (getIsHungry() ? "\n   Я не голоден(а)" : "\n   Покормите меня: " + getFoodType()));
+        System.out.printf("%s", (isHungry() ? "\n   Я не голоден(а)" : "\n   Покормите меня: " + getFoodType()));
     }
 
     public void beIll() {
-        System.out.printf("%s%s", "\n   Я сейчас: ", (getIsHealth() ? "здоров(а)" : "болею"));
+        System.out.printf("%s%s", "\n   Я сейчас: ", (isHealth() ? "здоров(а)" : "болею"));
     }
 
 
 
-    public int getRequiredAmountFood() {
+    public double getRequiredAmountFood() {
         return requiredAmountFood;
     }
 
@@ -49,7 +68,7 @@ abstract public class Animal {
         this.requiredAmountFood = requiredAmountFood;
     }
 
-    public int getAnimalWeight() {
+    public double getAnimalWeight() {
         return animalWeight;
     }
 
@@ -97,19 +116,35 @@ abstract public class Animal {
         this.integument = integument;
     }
 
-    public Boolean getIsHealth() {
+    public Boolean isHealth() {
         return isHealth;
-    }
+    } //to-do get del
 
     public void setIsHealth(Boolean isHealth) {
         this.isHealth = isHealth;
     }
 
-    public Boolean getIsHungry() {
+    public Boolean isHungry() {
         return isHungry;
     }
 
     public void setIsHungry(Boolean isHungry) {
         this.isHungry = isHungry;
+    }
+
+    public int getWorkerID() {
+        return workerID;
+    }
+
+    public void setWorkerID(int workerID) {
+        this.workerID = workerID;
+    }
+
+    public int getDoctorID() {
+        return doctorID;
+    }
+
+    public void setDoctorID(int doctorID) {
+        this.doctorID = doctorID;
     }
 }

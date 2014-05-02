@@ -5,6 +5,7 @@ package ua.in.kupol.zoo.model.animals;
  */
 public class Duck extends Animal {
     private String myColor;
+    /**
     public Duck (
             Integer aRequiredAmountFood,
             Integer aAnimalWeight,
@@ -28,7 +29,13 @@ public class Duck extends Animal {
         setIsHungry(aIsHungry);
         setMyColor(myColor);
     }
+    */
 
+    public Duck (String[][] fieldsList) {
+        String[] standartFields = fieldsList[0];
+        super.createAnimal(standartFields);
+        setMyColor(fieldsList[1][0]);
+    }
     @Override
     void myFeature() {
         System.out.printf("\n   Мой цвет: " + getMyColor());

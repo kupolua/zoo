@@ -9,31 +9,37 @@ import java.util.List;
  */
 public class Worker extends Employee{
 
-    public Worker(
-            Integer aSalary,
-            String aFirstName,
-            String sPosition
-    ){
-            setSalary(aSalary);
-            setFirstName(aFirstName);
-            setPosition(sPosition);
+    public Worker(String[][] fieldsList) {
+        String[] standartFields = fieldsList[0];
+        super.createEmployee(standartFields);
     }
-
+    /**public Worker(
+            Integer id,
+            Integer salary,
+            String firstName,
+            String position
+    ){
+            setId(id);
+            setSalary(salary);
+            setFirstName(firstName);
+            setPosition(position);
+    }
+    */
     @Override
     void myFeature() {
-        System.out.printf(" Я Работаю в комбинезоне!");
+        System.out.printf("Я Работаю: " + getClothes());
     }
 
     public void feedAnimal(Animal l){
         aboutEmployee();
-        System.out.printf("\nпокормил: " + l.getNickName());
+        System.out.printf("\nПокормил: " + l.getNickName());
     }
 
     public void feedAnimal(List listFeedAnimals) {
         List<Animal> needFeedAnimals = listFeedAnimals;
 
         for (Animal l : needFeedAnimals) {
-            if (!l.getIsHungry()){
+            if (!l.isHungry()){
                 System.out.printf("Покормил! " + l.getNickName());
             }
         }

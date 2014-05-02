@@ -3,6 +3,8 @@ package ua.in.kupol.zoo.model;
 /**
  * Created by pavelkulakovsky on 28.04.14.
  */
-public interface Feed {
+
+//todo Feedable
+public interface Feed extends Move {
     void feed();
 }

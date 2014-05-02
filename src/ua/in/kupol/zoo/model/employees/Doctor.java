@@ -9,24 +9,30 @@ import java.util.List;
  */
 public class Doctor extends Employee {
 
-    public Doctor(
-            Integer aSalary,
-            String aFirstName,
-            String sPosition
-    ){
-        setSalary(aSalary);
-        setFirstName(aFirstName);
-        setPosition(sPosition);
+    public Doctor(String[][] fieldsList) {
+        String[] standartFields = fieldsList[0];
+        super.createEmployee(standartFields);
     }
-
+    /**public Doctor(
+            Integer id,
+            Integer salary,
+            String firstName,
+            String position
+    ){
+        setId(id);
+        setSalary(salary);
+        setFirstName(firstName);
+        setPosition(position);
+    }
+    */
     @Override
     void myFeature() {
-        System.out.printf(" Я Работаю в белом халате!");
+        System.out.printf("Я Работаю в: " + getClothes());
     }
 
     public void treatAnimal(Animal l){
         aboutEmployee();
-        System.out.printf("\nполечил: " + l.getNickName());
+        System.out.printf("\nПолечил: " + l.getNickName());//todo - Storage
     }
 
     public void treatAnimal(List listTreatAnimals) {
@@ -34,7 +40,7 @@ public class Doctor extends Employee {
         aboutEmployee();
 
         for (Animal l : needTreatAnimals) {
-            if (!l.getIsHealth()){
+            if (!l.isHealth()){
                 System.out.printf("Полечил! " + l.getNickName());
             }
         }

@@ -7,7 +7,11 @@ abstract public class Animal {
 
 
     private double requiredAmountFood;
+    private double foodCost;
     private double animalWeight; //todo подключить генератор случайных чисел
+    private double medicineAmount;
+    private double medicineCost;
+
     private int workerID;
     private int doctorID;
 
@@ -15,6 +19,7 @@ abstract public class Animal {
     private String state;
     private String voice;
     private String foodType;
+    private String medicineType;
     private String integument;
 
     private Boolean isHealth;
@@ -23,22 +28,27 @@ abstract public class Animal {
     abstract void myFeature();
 
     public void createAnimal(String[] fieldsList) {
-        requiredAmountFood = Double.parseDouble(fieldsList[0]);
-        animalWeight = Double.parseDouble(fieldsList[1]);
-        nickName = fieldsList[2];
-        state = fieldsList[3];
-        voice = fieldsList[4];
-        foodType = fieldsList[5];
-        integument = fieldsList[6];
-        isHealth = Boolean.valueOf(fieldsList[7]);
-        isHungry = Boolean.valueOf(fieldsList[8]);
-        workerID = Integer.parseInt(fieldsList[9]);
-        doctorID = Integer.parseInt(fieldsList[10]);
+        animalWeight = Double.parseDouble(fieldsList[0]);
+        nickName = fieldsList[1];
+        state = fieldsList[2];
+        voice = fieldsList[3];
+        foodType = fieldsList[4];
+        requiredAmountFood = Double.parseDouble(fieldsList[5]);
+        foodCost = Double.parseDouble(fieldsList[6]);
+        integument = fieldsList[7];
+        isHealth = Boolean.valueOf(fieldsList[8]);
+        isHungry = Boolean.valueOf(fieldsList[9]);
+        workerID = Integer.parseInt(fieldsList[10]);
+        doctorID = Integer.parseInt(fieldsList[11]);
+        medicineType = fieldsList[12];
+        medicineAmount = Double.parseDouble(fieldsList[13]);
+        medicineCost = Double.parseDouble(fieldsList[14]);
     }
     public void aboutAnimal(){
         System.out.printf("\n\nЯ " + getClass().getSimpleName() + " Меня зовут: " + getNickName());
         System.out.printf("\nМой вес: " + getAnimalWeight());
         System.out.printf("\nВес моего корма: " + getRequiredAmountFood());
+        System.out.printf("\nСтоимость моего корма: " + getFoodCost());
 
         eat();
         bag();
@@ -146,5 +156,37 @@ abstract public class Animal {
 
     public void setDoctorID(int doctorID) {
         this.doctorID = doctorID;
+    }
+
+    public String getMedicineType() {
+        return medicineType;
+    }
+
+    public void setMedicineType(String medicineType) {
+        this.medicineType = medicineType;
+    }
+
+    public double getMedicineAmount() {
+        return medicineAmount;
+    }
+
+    public void setMedicineAmount(double medicineAmount) {
+        this.medicineAmount = medicineAmount;
+    }
+
+    public double getMedicineCost() {
+        return medicineCost;
+    }
+
+    public void setMedicineCost(double medicineCost) {
+        this.medicineCost = medicineCost;
+    }
+
+    public double getFoodCost() {
+        return foodCost;
+    }
+
+    public void setFoodCost(double foodCost) {
+        this.foodCost = foodCost;
     }
 }

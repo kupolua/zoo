@@ -16,8 +16,8 @@ public class Zoo {
 
         ZooCreator zooCreator = new ZooCreator();
 
-        List<Animal> listAnimals = zooCreator.createAnimals();
-        Map<String, Employee> listEmployees = zooCreator.createEmployees();
+        List listAnimals = zooCreator.createAnimals();
+        Map listEmployees = zooCreator.createEmployees();
         checkAnimals(listAnimals, listEmployees);
 
     }

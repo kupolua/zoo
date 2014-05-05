@@ -23,7 +23,11 @@ public class Zoo {
     }
 
     public static void checkAnimals(List<Animal> listAnimals, Map<String, Employee> listEmployees){
+<<<<<<< .merge_file_Xns2Pw
         System.out.printf("\n============================ Зоопарк2 ===========================+");
+=======
+        System.out.printf("\n============================ Зоопарк! ===========================+");
+>>>>>>> .merge_file_4Fk9H5
         for (Animal l : listAnimals) {
             l.aboutAnimal(); //Report about Animal
             if (!l.isHealth()) {

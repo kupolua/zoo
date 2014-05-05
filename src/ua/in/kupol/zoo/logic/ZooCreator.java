@@ -5,7 +5,10 @@ import ua.in.kupol.zoo.model.employees.Doctor;
 import ua.in.kupol.zoo.model.employees.Employee;
 import ua.in.kupol.zoo.model.employees.Worker;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by pavelkulakovsky on 29.04.14.

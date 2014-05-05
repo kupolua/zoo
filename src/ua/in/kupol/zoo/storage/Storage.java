@@ -1,4 +1,4 @@
-package ua.in.kupol.zoo.model;
+package ua.in.kupol.zoo.storage;
 
 /**
  * Created by pavelkulakovsky on 28.04.14.

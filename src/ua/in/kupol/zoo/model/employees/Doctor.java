@@ -32,7 +32,7 @@ public class Doctor extends Employee {
 
     public void treatAnimal(Animal l){
         aboutEmployee();
-        System.out.printf("\nПолечил: " + l.getNickName());//todo - Storage
+        System.out.printf("\nПолечил: " + l.getNickName());//todo - storage
     }
 
     public void treatAnimal(List listTreatAnimals) {

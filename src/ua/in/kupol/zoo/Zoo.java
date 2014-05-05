@@ -23,7 +23,7 @@ public class Zoo {
     }
 
     public static void checkAnimals(List<Animal> listAnimals, Map<String, Employee> listEmployees){
-        System.out.printf("\n============================ Зоопарк1 ===========================+");
+        System.out.printf("\n============================ Зоопарк2 ===========================+");
         for (Animal l : listAnimals) {
             l.aboutAnimal(); //Report about Animal
             if (!l.isHealth()) {

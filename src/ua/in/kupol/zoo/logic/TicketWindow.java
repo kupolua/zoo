@@ -1,4 +1,4 @@
-package ua.in.kupol.zoo.model.animals;
+package ua.in.kupol.zoo.logic;
 
 /**
  * Created by pavelkulakovsky on 03.05.14.

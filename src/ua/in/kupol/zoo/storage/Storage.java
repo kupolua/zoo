@@ -8,6 +8,21 @@ public class Storage {
     private int id;
     private double food;
     private double foodCost;
+
+
+    // Второй вариант. Создать поле на каждый вид корма
+    private double foodBanana;
+    private double foodBananaCost;
+
+    private double foodMeat;
+    private double foodMeatCost;
+
+
+
+
+
+
+
     private double medicine;
     private double medicineCost;
 
